@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="21507" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="21507"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -20,10 +20,10 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
+        <window title="Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" toolbarStyle="preference" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <rect key="contentRect" x="949" y="526" width="600" height="400"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1055"/>
             <view key="contentView" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -126,11 +126,11 @@
                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xuS-pz-eBX">
                                             <rect key="frame" x="20" y="58" width="560" height="292"/>
                                             <clipView key="contentView" id="0c0-5q-JyF">
-                                                <rect key="frame" x="1" y="0.0" width="558" height="291"/>
-                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <rect key="frame" x="1" y="1" width="558" height="290"/>
+                                                <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="Wtz-Wf-vp1" id="w2L-aO-5yK" userLabel="Joystick TableView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="558" height="266"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="558" height="265"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -225,11 +225,11 @@
                                         <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXy-Hr-Spn">
                                             <rect key="frame" x="20" y="145" width="560" height="235"/>
                                             <clipView key="contentView" id="EC8-81-kOL">
-                                                <rect key="frame" x="1" y="0.0" width="558" height="234"/>
+                                                <rect key="frame" x="1" y="1" width="558" height="233"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" multipleSelection="NO" autosaveColumns="NO" headerView="1qu-Rf-lqe" id="Riy-Ok-IZT" userLabel="DIPSwitch TableView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="558" height="209"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="558" height="208"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <size key="intercellSpacing" width="3" height="2"/>
                                                         <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -318,23 +318,17 @@
             </view>
             <toolbar key="toolbar" implicitIdentifier="9186C2FD-31F4-4B17-A1AF-D4C608CBCDE3" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="EZn-6C-tNE">
                 <allowedToolbarItems>
-                    <toolbarItem implicitItemIdentifier="5C2706D2-6228-4CF4-A90A-36BAED2D8151" explicitItemIdentifier="general" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" selectable="YES" id="3CL-cj-z1N">
-                        <size key="minSize" width="4" height="14"/>
-                        <size key="maxSize" width="4" height="14"/>
+                    <toolbarItem implicitItemIdentifier="5C2706D2-6228-4CF4-A90A-36BAED2D8151" explicitItemIdentifier="general" label="General" paletteLabel="General" tag="-1" image="NSPreferencesGeneral" sizingBehavior="auto" selectable="YES" id="3CL-cj-z1N">
                         <connections>
                             <action selector="tabChanged:" target="-2" id="Hbw-aQ-VKY"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="C55463AC-3DF5-4728-9149-7B96334FD3E5" explicitItemIdentifier="input" label="Input" paletteLabel="Input" tag="-1" image="JoypadIcon" selectable="YES" id="DYc-Hq-yNp">
-                        <size key="minSize" width="32" height="32"/>
-                        <size key="maxSize" width="32" height="32"/>
+                    <toolbarItem implicitItemIdentifier="C55463AC-3DF5-4728-9149-7B96334FD3E5" explicitItemIdentifier="input" label="Input" paletteLabel="Input" tag="-1" image="JoypadIcon" sizingBehavior="auto" selectable="YES" id="DYc-Hq-yNp">
                         <connections>
                             <action selector="tabChanged:" target="-2" id="9uW-Rk-F2X"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="21C17DAF-BB57-43CA-95AF-5EEE947F9B33" explicitItemIdentifier="dipswitch" label="DIP Switches" paletteLabel="DIP Switches" tag="-1" image="DipswitchIcon" selectable="YES" id="IgP-tm-58x">
-                        <size key="minSize" width="32" height="32"/>
-                        <size key="maxSize" width="32" height="32"/>
+                    <toolbarItem implicitItemIdentifier="21C17DAF-BB57-43CA-95AF-5EEE947F9B33" explicitItemIdentifier="dipswitch" label="DIP Switches" paletteLabel="DIP Switches" tag="-1" image="DipswitchIcon" sizingBehavior="auto" selectable="YES" id="IgP-tm-58x">
                         <connections>
                             <action selector="tabChanged:" target="-2" id="nJP-eS-hBt"/>
                         </connections>

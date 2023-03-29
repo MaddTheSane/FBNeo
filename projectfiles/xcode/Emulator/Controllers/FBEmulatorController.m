@@ -36,7 +36,6 @@
     BOOL isCursorLocked;
     BOOL isCursorVisible;
     BOOL isAutoPaused;
-    NSArray *defaultsToObserve;
     BOOL driverLoadError;
 }
 
@@ -60,7 +59,7 @@
 
 - (void) awakeFromNib
 {
-    defaultsToObserve = @[
+	NSArray *defaultsToObserve = @[
         @"pauseWhenInactive",
         @"suppressScreenSaver",
         @"hideLockOptions",
@@ -72,7 +71,7 @@
     tba.layoutAttribute = NSLayoutAttributeRight;
     lockText.stringValue = NSLocalizedString(@"⌘+click", nil);
     lockText.hidden = YES;
-    lockIcon.image = [NSImage imageNamed:@"NSLockUnlockedTemplate"];
+    lockIcon.image = [NSImage imageNamed:NSImageNameLockUnlockedTemplate];
     lockIcon.enabled = NO;
     lockIcon.hidden = [NSUserDefaults.standardUserDefaults boolForKey:@"hideLockOptions"];
     [self.window addTitlebarAccessoryViewController:tba];

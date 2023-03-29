@@ -146,7 +146,7 @@
     return YES;
 
 save:
-    FILE *f = fopen([path cStringUsingEncoding:NSUTF8StringEncoding], "w");
+    FILE *f = fopen([path fileSystemRepresentation], "w");
     if (!f)
         return NO;
 
@@ -167,7 +167,7 @@ save:
     if (!switches || switches.count < 1)
         return YES;
 
-    FILE *f = fopen([path cStringUsingEncoding:NSUTF8StringEncoding], "r");
+    FILE *f = fopen([path fileSystemRepresentation], "r");
     if (!f)
         return NO;
 

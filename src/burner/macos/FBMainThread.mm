@@ -17,17 +17,17 @@
 
 #include "main.h"
 
-typedef enum LogEntryType {
+typedef NS_ENUM(NSInteger, LogEntryType) {
     LogEntryMessage,
     LogEntryError,
-} LogEntryType;
+};
 
 @implementation FBMainThread
 {
     NSString *runningPath;
     NSString *pathToLoad;
     NSMutableString *log;
-    NSMutableArray *observers;
+    NSMutableArray<id<FBMainThreadDelegate>> *observers;
 }
 
 - (instancetype) init
@@ -37,6 +37,7 @@ typedef enum LogEntryType {
         observers = [NSMutableArray new];
         _isRunning = NO;
         OneTimeInit();
+		self.name = @"FinalBurn Emulation";
     }
     return self;
 }
@@ -55,7 +56,7 @@ typedef enum LogEntryType {
 
 - (NSString *) log
 {
-    return log;
+    return [log copy];
 }
 
 - (void) addObserver:(id<FBMainThreadDelegate>) observer
@@ -93,7 +94,7 @@ typedef enum LogEntryType {
 
 - (void) main
 {
-    SetNVRAMPath([AppDelegate.sharedInstance.nvramPath cStringUsingEncoding:NSUTF8StringEncoding]);
+    SetNVRAMPath([AppDelegate.sharedInstance.nvramPath fileSystemRepresentation]);
 
     while (!self.isCancelled) {
         if (pathToLoad == nil) {
@@ -116,7 +117,7 @@ typedef enum LogEntryType {
             }
         }
 
-        if (MainInit([setPath cStringUsingEncoding:NSUTF8StringEncoding],
+        if (MainInit([setPath fileSystemRepresentation],
                      [setName cStringUsingEncoding:NSUTF8StringEncoding]) != 0) {
             pathToLoad = nil;
 

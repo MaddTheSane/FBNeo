@@ -98,8 +98,7 @@ static void gamepadInputValueCallback(void *context, IOReturn result, void *send
 - (void) unregisterFromEvents
 {
     if (registeredForEvents) {
-        // FIXME: why does this crash the emulator?
-//        IOHIDDeviceClose(hidDevice, kIOHIDOptionsTypeNone);
+        IOHIDDeviceClose(hidDevice, kIOHIDOptionsTypeNone);
         
         registeredForEvents = NO;
         

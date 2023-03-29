@@ -34,9 +34,9 @@
 - (instancetype) initWithCoder:(NSCoder *) coder
 {
     if ((self = [super init]) != nil) {
-        _parent = [coder decodeObjectForKey:@"parent"];
-        _name = [coder decodeObjectForKey:@"name"];
-        _title = [coder decodeObjectForKey:@"title"];
+        self.parent = [coder decodeObjectOfClass:[NSString class] forKey:@"parent"];
+		self.name = [coder decodeObjectOfClass:[NSString class] forKey:@"name"];
+		self.title = [coder decodeObjectOfClass:[NSString class] forKey:@"title"];
         _status = (unsigned char) [coder decodeIntForKey:@"status"];
     }
 
@@ -62,8 +62,6 @@
 @end
 
 @implementation FBScanner
-{
-}
 
 - (instancetype) init
 {
@@ -80,7 +78,7 @@
         return;
 
     snprintf(szAppRomPaths[0], MAX_PATH, "%s/",
-             [_rootPath cStringUsingEncoding:NSUTF8StringEncoding]);
+             [_rootPath fileSystemRepresentation]);
 
     id<FBScannerDelegate> del = _delegate;
     if ([del respondsToSelector:@selector(scanDidStart)])

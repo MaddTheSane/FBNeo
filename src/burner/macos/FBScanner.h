@@ -19,9 +19,9 @@
 
 @interface FBROMSet: NSObject<NSCoding>
 
-@property NSString *parent;
-@property NSString *name;
-@property NSString *title;
+@property (copy) NSString *parent;
+@property (copy) NSString *name;
+@property (copy) NSString *title;
 @property unsigned char status;
 
 @end

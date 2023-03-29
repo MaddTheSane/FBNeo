@@ -100,6 +100,7 @@ int MainEnd()
 
 unsigned int SDL_GetTicks()
 {
+//	dispatch_time(DISPATCH_TIME_NOW, 0);
     UnsignedWide uw;
     Microseconds(&uw);
     return ((double) UnsignedWideToUInt64(uw) + 500.0) / 1000.0;
@@ -110,7 +111,7 @@ void SDL_Delay(unsigned int ms)
     unsigned int stop, now;
     stop = SDL_GetTicks() + ms;
     do {
-        MPYield();
+		sched_yield();
         now = SDL_GetTicks();
     } while (stop > now);
 }
